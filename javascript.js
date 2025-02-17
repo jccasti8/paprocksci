@@ -1,4 +1,4 @@
-console.log("hello world");
+//console.log("hello world");
 
 function getRandomInt(max){
     return Math.floor(Math.random() * max); // what this is doing is math.random() picks a random number between 0 and 1, .floor() is rounding down the number so it is an int, and *max is making it so that we can get lets say i want a choice between 3 numbers i can get 3 numbers instead of just 0 and 1
@@ -34,7 +34,7 @@ let computerScore = 0;
 function playRound(humanChoice, computerChoice) {
     humanChoice = humanChoice.toUpperCase();  //changes both human choice and computer choice to all caps to adequately compare them.
     computerChoice = computerChoice.toUpperCase();
-    if (humanChoice==="PAPER"){
+    if (humanChoice==="PAPER"){ // if human chooses paper
         if (computerChoice === "ROCK"){
             console.log("You win! 😄 Paper beats rock");
             humanScore++;
@@ -44,7 +44,7 @@ function playRound(humanChoice, computerChoice) {
         }else {
             console.log("Tied!")
         }
-    } else if (humanChoice === "ROCK"){
+    } else if (humanChoice === "ROCK"){ // if human chooses rock
         if (computerChoice == "PAPER"){
             console.log("You lose 😞 Paper beats Rock");
             computerScore++;
@@ -54,7 +54,7 @@ function playRound(humanChoice, computerChoice) {
         }else {
             console.log("Tied!")
         }
-    } else if (humanChoice === "SCISSORS"){
+    } else if (humanChoice === "SCISSORS"){ // if human chooses scissors
         if (computerChoice === "PAPER"){
             console.log("You win! 😄 Scissors beats paper");
             humanScore++;
@@ -70,10 +70,19 @@ function playRound(humanChoice, computerChoice) {
     
 }
 
-const humanSelection = getHumanChoice();
-console.log("human choice: " + humanSelection);
-const computerSelection = getComputerChoice()
-console.log("computer choice: " + computerSelection);
+//const humanSelection = getHumanChoice();
+//console.log("human choice: " + humanSelection);
+//const computerSelection = getComputerChoice()
+//console.log("computer choice: " + computerSelection);
 
-playRound(humanSelection, computerSelection);
+//playRound(humanSelection, computerSelection);
 
+function playGame() {
+    for (let i = 0; i < 5; i++){
+        let humanSelection = getHumanChoice();
+        let computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+    }
+}
+
+playGame();
